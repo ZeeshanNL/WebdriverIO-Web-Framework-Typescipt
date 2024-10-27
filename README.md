@@ -22,7 +22,7 @@ npm install
 
 Run tests:
 ```bash
-npm npm run wdio "@Login"
+npm run wdio "@Login"
 ```
 
 Format code with Prettier (optional):
