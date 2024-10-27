@@ -25,13 +25,7 @@ Run tests:
 npm npm run wdio "@Login"
 ```
 
-Run tests with coverage:
-```bash
-npm run test:cov
-```
-
-
-Format code with Prettier:
+Format code with Prettier (optional):
 ```bash
 npm run prettify
 ```
