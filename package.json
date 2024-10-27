@@ -1,5 +1,5 @@
 {
-  "name": "@autosol/web-regression",
+  "name": "web-regression",
   "directories": {
     "test": "tests"
   },

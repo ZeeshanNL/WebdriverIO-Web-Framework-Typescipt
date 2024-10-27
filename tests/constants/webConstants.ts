@@ -1,10 +1,10 @@
-export const URL = "https://www.saucedemo.com/";
+export const BASE_URL = "https://www.saucedemo.com/";
 
 export const USERNAME = "standard_user";
 export const PASSWORD = "secret_sauce";
 
-export const WRONGUSERNAME = "abc";
-export const WRONGPASSWORD = "123";
+export const WRONG_USERNAME = "abc";
+export const WRONG_PASSWORD = "123";
 
 export enum ETimeout {
     TIMEOUT_XXS = 2000,
