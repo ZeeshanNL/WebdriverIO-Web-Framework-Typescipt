@@ -3,10 +3,8 @@ import { ETimeout } from "../constants/webConstants";
 export class webElementActions {
     /**
      * Navigate to a URL.
-     * @param waitTimeOut - The timeout for element display (default: ETimeout.TIMEOUT_S).
      */
-    static async navigateToUrl(url: any, waitTimeOut = ETimeout.TIMEOUT_S) {
-      await driver.pause(waitTimeOut || ETimeout.TIMEOUT_XXS);
+    static async navigateToUrl(url: any) {
       await browser.url(url);
     }
 
