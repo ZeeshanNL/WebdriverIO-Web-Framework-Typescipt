@@ -1,4 +1,4 @@
-# Web Regression Testing Framework
+# WebdriverIO Web Regression Testing Framework
 
 A web regression testing framework built with WebDriverIO, TypeScript, and Cucumber.
 
