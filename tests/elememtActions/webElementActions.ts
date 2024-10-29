@@ -1,14 +1,15 @@
-import { ETimeout } from "../constants/webConstants";
+import { ETimeout } from '../constants/webConstants';
 
-export class webElementActions {
-    /**
-     * Navigate to a URL.
-     */
-    static async navigateToUrl(url: any) {
-      await browser.url(url);
-    }
+export class WebElementActions {
+  /**
+   * Navigate to a URL.
+   * @param url - The url to navigate.
+   */
+  static async navigateToUrl(url: any) {
+    await browser.url(url);
+  }
 
-   /**
+  /**
    * Maximize the Window
    */
   static async maximizeWindow() {
@@ -76,15 +77,11 @@ export class webElementActions {
     await expect(await elementPath.getText()).toEqual(expectedText);
   }
 
-   /**
+  /**
    * Verify if an element is displayed.
    * @param elementPath - The element to verify.
    */
-   static async verifyElementIsDisplayed(
-    elementPath: any,
-  ) {
+  static async verifyElementIsDisplayed(elementPath: any) {
     await expect(elementPath).toBeDisplayed();
   }
-
 }
-export default webElementActions;

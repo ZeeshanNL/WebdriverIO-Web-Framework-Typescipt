@@ -1,19 +1,18 @@
-export const BASE_URL = "https://www.saucedemo.com/";
+export const BASE_URL = 'https://www.saucedemo.com/';
 
-export const USERNAME = "standard_user";
-export const PASSWORD = "secret_sauce";
+export const USERNAME = 'standard_user';
+export const PASSWORD = 'secret_sauce';
 
-export const WRONG_USERNAME = "abc";
-export const WRONG_PASSWORD = "123";
+export const WRONG_USERNAME = 'abc';
+export const WRONG_PASSWORD = '123';
 
 export enum ETimeout {
-    TIMEOUT_XXS = 2000,
-    TIMEOUT_XS = 5000,
-    TIMEOUT_S = 10000,
-    TIMEOUT_M = 20000,
-    TIMEOUT_L = 30000,
-    TIMEOUT_XL = 40000,
-    TIMEOUT_XXXL = 80000,
-    TIMEOUT_XXXXL = 300000,
-  }
-
+  TIMEOUT_XXS = 2000,
+  TIMEOUT_XS = 5000,
+  TIMEOUT_S = 10000,
+  TIMEOUT_M = 20000,
+  TIMEOUT_L = 30000,
+  TIMEOUT_XL = 40000,
+  TIMEOUT_XXXL = 80000,
+  TIMEOUT_XXXXL = 300000,
+}
