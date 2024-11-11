@@ -2,7 +2,7 @@ import { Given, Then, When } from "@wdio/cucumber-framework";
 import { BASE_URL, PASSWORD, USERNAME, WRONG_USERNAME, WRONG_PASSWORD } from "../constants/webConstants";
 import LoginPage from "../pageobjects/loginPage";
 import LoginHelper from "../features-helpers/login.helper";
-import { WebElementActions } from "../elememtActions/webElementActions";
+import { WebElementActions } from "../elementActions/webElementActions";
 
 Given(`the user is on the login page`, async () => {
   await WebElementActions.navigateToUrl(BASE_URL);

@@ -1,4 +1,4 @@
-import { WebElementActions } from '../elememtActions/webElementActions';
+import { WebElementActions } from '../elementActions/webElementActions';
 import LoginPage from '../pageobjects/loginPage';
 
 class LoginHelper {
