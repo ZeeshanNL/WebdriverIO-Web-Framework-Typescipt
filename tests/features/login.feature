@@ -1,11 +1,15 @@
 Feature: Login Functionality
-  @Login  
+  @Login
   Scenario: Successful login with valid credentials
     Given the user is on the login page
-    When the user enters a valid username and password and clicks the login button
+    When the user enters a valid "<username>" and password and clicks the login button
     Then the user should be redirected to the products page
 
-  @Login  
+    Examples:
+      | username        |
+      | standard_user   |
+
+  @Login
   Scenario: Unsuccessful login with invalid credentials
     Given the user is on the login page
     When the user enters an invalid username and password and clicks the login button

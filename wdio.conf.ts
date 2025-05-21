@@ -64,8 +64,8 @@ export const config: Options.Testrunner = {
     //
     capabilities: [{
         maxInstances:1,
-        browserName: 'chrome',
-        browserVersion: 'stable',
+        browserName: 'firefox',
+        browserVersion: 'latest',
         acceptInsecureCerts:true
     }],
 

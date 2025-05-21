@@ -8,10 +8,11 @@ Given(`the user is on the login page`, async () => {
   await WebElementActions.navigateToUrl(BASE_URL);
   await WebElementActions.maximizeWindow();
 });
+
 When(
-  `the user enters a valid username and password and clicks the login button`,
-  async () => {
-    await LoginHelper.userLogin(USERNAME, PASSWORD);
+  `the user enters a valid {string} and password and clicks the login button`,
+  async  (username: string) => {
+    await LoginHelper.userLogin(username, PASSWORD);
   },
 );
 Then(`the user should be redirected to the products page`, async () => {
@@ -35,3 +36,7 @@ Then(`the user should see an error message`, async () => {
 Then(`the user should remain on the login page`, async () => {
   await WebElementActions.verifyElementIsDisplayed(await LoginPage.loginButton);
 });
+
+function async(arg0: (username: string) => void): import("@cucumber/cucumber/lib/support_code_library_builder/types").TestStepFunction<import("@cucumber/cucumber").IWorld<any>> {
+  throw new Error("Function not implemented.");
+}
