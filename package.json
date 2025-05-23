@@ -7,8 +7,8 @@
     "lint": "eslint 'tests/**/*.ts'",
     "lint:fix": "eslint --fix 'tests/**/*.ts'",
     "prettify": "prettier --write \"**/*.ts\"",
-    "clean-report": "npx allure generate --clean ./allure-results",
-    "open-report": "npm run clean-report && npx allure open",
+    "clean-report": "allure generate --clean ./allure-results",
+    "open-report": "npm run clean-report && allure open",
     "report": "npm run clean-report && npm run open-report",
     "test": "echo \"Error: no test specified\" && exit 1",
     "wdio": "wdio run ./wdio.conf.ts --cucumberOpts.tags"
@@ -24,7 +24,6 @@
     "@wdio/cli": "^8.16.7",
     "@wdio/types": "^8.36.1",
     "allure": "^0.0.0",
-    "allure-commandline": "^2.27.0",
     "chromedriver": "^123.0.4",
     "esm": "^3.2.25"
   },
