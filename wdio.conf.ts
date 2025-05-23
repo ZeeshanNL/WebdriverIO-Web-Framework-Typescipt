@@ -66,7 +66,13 @@ export const config: Options.Testrunner = {
         maxInstances:1,
         browserName: 'chrome',
         browserVersion: 'stable',
-        acceptInsecureCerts:true
+        acceptInsecureCerts: true,
+        'goog:chromeOptions': {
+            args: process.env.WDIO_CHROME_ARGS ? 
+                process.env.WDIO_CHROME_ARGS.split(' ') : 
+                ['--no-sandbox', '--disable-dev-shm-usage', '--disable-gpu', '--headless', 
+                 `--user-data-dir=/tmp/chrome-data-${Date.now()}`]
+        }
     }],
 
     //
