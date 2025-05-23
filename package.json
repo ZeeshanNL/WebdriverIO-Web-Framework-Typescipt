@@ -24,6 +24,7 @@
     "@wdio/cli": "^8.16.7",
     "@wdio/types": "^8.36.1",
     "allure": "^0.0.0",
+    "allure-commandline": "^2.27.0",
     "chromedriver": "^123.0.4",
     "esm": "^3.2.25"
   },
