@@ -7,6 +7,10 @@ on:
         description: 'WDIO Tag to run'
         required: false
         default: '@Login'
+      additionalParams:
+        description: 'Additional parameters for WDIO command'
+        required: false
+        default: ''
 
 jobs:
   run-wdio-login:
@@ -18,7 +22,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '14'
+          node-version: '16'
 
       - name: Install dependencies
         run: npm ci
@@ -27,4 +31,39 @@ jobs:
         env:
           LOGIN_PASSWORD: ${{ secrets.LOGIN_PASSWORD }}
         run: |
-          npm run wdio "${{ github.event.inputs.wdioTag }}"
+          if [ -n "${{ github.event.inputs.additionalParams }}" ]; then
+            npm run wdio "${{ github.event.inputs.wdioTag }}" -- ${{ github.event.inputs.additionalParams }}
+          else
+            npm run wdio "${{ github.event.inputs.wdioTag }}"
+          fi
+          
+      - name: Generate and Display Test Report
+        if: always()
+        run: |
+          echo "Generating Allure report..."
+          npm run report
+          
+          echo "\n=================== TEST SUMMARY ===================\n"
+          
+          # Display test stats from the report if available
+          if [ -f "allure-report/widgets/summary.json" ]; then
+            echo "Test Summary Stats:"
+            cat allure-report/widgets/summary.json | grep -v "uid"
+            echo "\n"
+          fi
+          
+          # Display test status breakdown if available
+          if [ -f "allure-report/widgets/status-chart.json" ]; then
+            echo "Test Status Breakdown:"
+            cat allure-report/widgets/status-chart.json
+            echo "\n"
+          fi
+          
+          # Display test duration stats if available
+          if [ -f "allure-report/widgets/duration-trend.json" ]; then
+            echo "Test Duration Stats:"
+            cat allure-report/widgets/duration-trend.json
+            echo "\n"
+          fi
+          
+          echo "=================== END SUMMARY ===================\n"
