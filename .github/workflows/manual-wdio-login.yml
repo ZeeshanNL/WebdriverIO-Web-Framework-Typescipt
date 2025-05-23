@@ -30,7 +30,12 @@ jobs:
       - name: Run WDIO for @Login
         env:
           LOGIN_PASSWORD: ${{ secrets.LOGIN_PASSWORD }}
+          # Set Chrome options to fix user-data-dir issue
+          WDIO_CHROME_ARGS: "--no-sandbox --disable-dev-shm-usage --disable-gpu --disable-extensions --headless --window-size=1920,1080 --user-data-dir=/tmp/chrome-data-${{ github.run_id }}-${{ github.run_attempt }}"
         run: |
+          # Create a unique Chrome user data directory
+          mkdir -p /tmp/chrome-data-${{ github.run_id }}-${{ github.run_attempt }}
+          
           if [ -n "${{ github.event.inputs.additionalParams }}" ]; then
             npm run wdio "${{ github.event.inputs.wdioTag }}" -- ${{ github.event.inputs.additionalParams }}
           else
